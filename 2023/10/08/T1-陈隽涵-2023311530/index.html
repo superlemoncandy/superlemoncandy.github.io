@@ -22,22 +22,22 @@
     <meta name="description" content="上机任务 参考和学习本章内容，写出一个 bash 脚本，可以使它自动读取一个文件夹（例如bash_homework&#x2F;）的内容，将该文件夹下文件的名字输出到 filenames.txt, 子文件夹的名字输出到 dirname.txt 。  提示和要求：下载bash_homework.zip并解压（从链接 Files Needed 的 Files 路径下的相应文件夹中下载）。将 bash 脚">
 <meta property="og:type" content="article">
 <meta property="og:title" content="10.8 上机练习">
-<meta property="og:url" content="http://superlemoncandy.github.io/2023/10/08/%E4%B8%8A%E6%9C%BA%E7%BB%83%E4%B9%A010.8/index.html">
+<meta property="og:url" content="http://superlemoncandy.github.io/2023/10/08/T1-%E9%99%88%E9%9A%BD%E6%B6%B5-2023311530/index.html">
 <meta property="og:site_name" content="Explorer">
 <meta property="og:description" content="上机任务 参考和学习本章内容，写出一个 bash 脚本，可以使它自动读取一个文件夹（例如bash_homework&#x2F;）的内容，将该文件夹下文件的名字输出到 filenames.txt, 子文件夹的名字输出到 dirname.txt 。  提示和要求：下载bash_homework.zip并解压（从链接 Files Needed 的 Files 路径下的相应文件夹中下载）。将 bash 脚">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-10-08T11:13:15.000Z">
-<meta property="article:modified_time" content="2023-10-08T12:14:06.145Z">
+<meta property="article:modified_time" content="2023-10-09T08:17:53.306Z">
 <meta property="article:author" content="Junhan">
 <meta property="article:tag" content="keywords">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://superlemoncandy.github.io/2023/10/08/%E4%B8%8A%E6%9C%BA%E7%BB%83%E4%B9%A010.8/">
+<link rel="canonical" href="http://superlemoncandy.github.io/2023/10/08/T1-%E9%99%88%E9%9A%BD%E6%B6%B5-2023311530/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://superlemoncandy.github.io/2023/10/08/%E4%B8%8A%E6%9C%BA%E7%BB%83%E4%B9%A010.8/","path":"2023/10/08/上机练习10.8/","title":"10.8 上机练习"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://superlemoncandy.github.io/2023/10/08/T1-%E9%99%88%E9%9A%BD%E6%B6%B5-2023311530/","path":"2023/10/08/T1-陈隽涵-2023311530/","title":"10.8 上机练习"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>10.8 上机练习 | Explorer</title>
@@ -154,7 +154,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://superlemoncandy.github.io/2023/10/08/%E4%B8%8A%E6%9C%BA%E7%BB%83%E4%B9%A010.8/">
+    <link itemprop="mainEntityOfPage" href="http://superlemoncandy.github.io/2023/10/08/T1-%E9%99%88%E9%9A%BD%E6%B6%B5-2023311530/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -182,9 +182,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2023-10-08 19:13:15 / Modified: 20:14:06" itemprop="dateCreated datePublished" datetime="2023-10-08T19:13:15+08:00">2023-10-08</time>
+      <time title="Created: 2023-10-08 19:13:15" itemprop="dateCreated datePublished" datetime="2023-10-08T19:13:15+08:00">2023-10-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-10-09 16:17:53" itemprop="dateModified" datetime="2023-10-09T16:17:53+08:00">2023-10-09</time>
     </span>
 
   
@@ -224,7 +230,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">DIR=<span class="variable">$1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用find命令获取目录下的所有文件和子目录</span></span><br><span class="line"><span class="comment">#find &quot;$DIR&quot; -type f -printf &quot;FILE: %p\n&quot; &gt;&gt; filenames.txt</span></span><br><span class="line">find <span class="string">&quot;<span class="variable">$DIR</span>&quot;</span> -<span class="built_in">type</span> f -<span class="built_in">printf</span> <span class="string">&quot;%f\n&quot;</span> &gt;&gt; filenames.txt</span><br><span class="line"><span class="comment">#find &quot;$DIR&quot; -type d -printf &quot;DIR: %p\n&quot; &gt;&gt; dirnames.txt</span></span><br><span class="line">find <span class="string">&quot;<span class="variable">$DIR</span>&quot;</span> -<span class="built_in">type</span> d -<span class="built_in">printf</span> <span class="string">&quot;%f\n&quot;</span> &gt;&gt; dirnames.txt</span><br></pre></td></tr></table></figure>
 <p>执行改进后的脚本：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">test</span>@bioinfo_docker:~/linux$ bash wenxinyiyan.sh bash_homework</span><br><span class="line"><span class="built_in">test</span>@bioinfo_docker:~/linux$ <span class="built_in">cat</span> filenames.txt</span><br><span class="line">f1.txt</span><br><span class="line">mouse_geneExp.txt</span><br><span class="line">c1.txt</span><br><span class="line">if.sh</span><br><span class="line">read.sh</span><br><span class="line">image</span><br><span class="line">random.sh</span><br><span class="line">test3.sh</span><br><span class="line">d1.txt</span><br><span class="line">c.txt</span><br><span class="line">number.sh</span><br><span class="line">bam_wig.sh</span><br><span class="line">wigToBigWig</span><br><span class="line">human_geneExp.txt</span><br><span class="line">a.txt</span><br><span class="line">insitiue.txt</span><br><span class="line">.DS_Store</span><br><span class="line">out.bw</span><br><span class="line">test.sh</span><br><span class="line">a1.txt</span><br><span class="line">b1.txt</span><br><span class="line">b.filter_random.pl</span><br><span class="line">chrom.size</span><br><span class="line">dir.txt</span><br><span class="line">test4.sh</span><br><span class="line">name.txt</span><br><span class="line">test.txt</span><br><span class="line">e1.txt</span><br><span class="line"><span class="built_in">test</span>@bioinfo_docker:~/linux$ <span class="built_in">cat</span> dirnames.txt</span><br><span class="line">bash_homework</span><br><span class="line">tmp_script</span><br><span class="line">mljs</span><br><span class="line">module</span><br><span class="line">genome</span><br><span class="line">node_modules</span><br><span class="line">tcga</span><br><span class="line">git</span><br><span class="line">app</span><br><span class="line">datatable</span><br><span class="line">a-docker</span><br><span class="line">backup</span><br><span class="line">highcharts</span><br><span class="line">e-annotation</span><br><span class="line">exRNA</span><br><span class="line">tmp</span><br><span class="line">db</span><br><span class="line">postar_app</span><br><span class="line">RBP_map</span><br><span class="line">script_backup</span><br><span class="line">map2</span><br><span class="line">hub29</span><br><span class="line">software</span><br><span class="line">c1-RBPanno</span><br><span class="line"><span class="built_in">test</span></span><br><span class="line">var</span><br><span class="line">ibme</span><br><span class="line">home</span><br><span class="line">postar.docker</span><br><span class="line">download</span><br><span class="line">biosoft</span><br><span class="line">postar2</span><br><span class="line">perl5</span><br><span class="line">rout</span><br><span class="line">script</span><br><span class="line">l-lwl</span><br><span class="line">x-rbp</span><br><span class="line">bin</span><br><span class="line">mogproject</span><br></pre></td></tr></table></figure>
-
+<p>这样输出结果虽然简洁，但是无法区分<code>bash_homework</code>自己的文件和子目录下的文件，<code>find</code>命令会便利文件夹下包含子目录内的所有文件！</p>
 <h1 id="后续计划"><a href="#后续计划" class="headerlink" title="后续计划"></a>后续计划</h1><ul>
 <li>学习使用chatGPT，代码问题问人工智能好像比自己百度Google效率高很多</li>
 <li>更改行内代码块样式，不要黑底</li>
